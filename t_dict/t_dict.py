@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from copy import deepcopy
 from jsonpointer import resolve_pointer, set_pointer
 
 #py2-py3
@@ -14,7 +15,7 @@ class TDict(MutableMapping):
         if d is None:
             self.__d = {}
         else:
-            self.__d = dict(d)
+            self.__d = deepcopy(d)
 
     def __getitem__(self, key):
         return self.__d[key]
