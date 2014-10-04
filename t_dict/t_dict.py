@@ -14,6 +14,8 @@ class TDict(MutableMapping):
     def __init__(self, d=None):
         if d is None:
             self.__d = {}
+        elif isinstance(d, self.__class__):
+            self.__d = deepcopy(d.__d)
         else:
             self.__d = deepcopy(d)
 
