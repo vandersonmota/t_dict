@@ -26,7 +26,7 @@ Install
 Why?
 --------
 
-Dealing with deep nested dicts can be a total pain. TDict aims to make less boring working with it, using jsonpointer sintax for that.
+Dealing with deep nested dicts can be a total pain. TDict aims to make less boring working with it, using jsonpointer syntax for that.
 
 It stand on the shoulders of jsonpointer (https://pypi.python.org/pypi/jsonpointer) in order to provide a datastructure
 
