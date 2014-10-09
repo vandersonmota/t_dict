@@ -28,11 +28,8 @@ Why?
 
 Dealing with deep nested dicts can be a total pain. TDict aims to make less boring working with it, using jsonpointer syntax for that.
 
-It stand on the shoulders of jsonpointer (https://pypi.python.org/pypi/jsonpointer) in order to provide a datastructure
+It stand on the shoulders of jsonpointer (https://pypi.python.org/pypi/jsonpointer), which implements the RFC - https://tools.ietf.org/html/rfc6901
 
-Json-pointer RFC - https://tools.ietf.org/html/rfc6901
-
-* Deep traversal in python dicts using Json-pointer syntax
 
 Usage
 --------
