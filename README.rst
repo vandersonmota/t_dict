@@ -36,7 +36,7 @@ Usage
 
 .. code-block:: python
 
-    from td_dict.td_dict import TDict
+    from t_dict.t_dict import TDict
 
     td = TDict({'nested': { 'dict': 'here' }})
     td.find('/nested/dict')
