@@ -12,6 +12,7 @@ import unittest
 
 from t_dict.t_dict import TDict
 
+
 class TDictFromTDict(unittest.TestCase):
     def setUp(self):
         self.td = TDict({
@@ -25,7 +26,8 @@ class TDictFromTDict(unittest.TestCase):
     def test_passing_tdict_to_init(self):
         td = TDict(self.td)
         self.assertEqual(self.td.find('/nested/dict/key'), 'Hello!!')
-        self.assertEqual(self.td.find('/nested/dict/notfound', 'mydefault'), 'mydefault')
+        self.assertEqual(self.td.find('/nested/dict/notfound', 'mydefault'),
+                         'mydefault')
         self.td.setin('/nested/dict/key', 'Horadric cube!')
         self.assertEqual(self.td['nested']['dict']['key'], 'Horadric cube!')
 
@@ -43,10 +45,13 @@ class TestJsonPointerTraversal(unittest.TestCase):
 
     def test_find_sanity(self):
         self.assertEqual(self.td.find('/nested/dict/key'), 'Hello!!')
-        self.assertEqual(self.td.find('/nested/dict/notfound', 'mydefault'), 'mydefault')
+        self.assertEqual(self.td.find('/nested/dict/notfound', 'mydefault'),
+                         'mydefault')
 
     def test_find_undefined_paths(self):
-        undefined_paths = ['/xxx/yyy/zzz/', '/nested/xxx/yyy/', '/nested/dict/xxx/']
+        undefined_paths = ['/xxx/yyy/zzz/',
+                           '/nested/xxx/yyy/',
+                           '/nested/dict/xxx/']
         try:
             for path in undefined_paths:
                 self.td.find(path)

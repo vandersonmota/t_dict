@@ -9,6 +9,7 @@ try:
 except ImportError:
     from collections.abc import MutableMapping
 
+
 class TDict(MutableMapping):
 
     def __init__(self, d=None):
