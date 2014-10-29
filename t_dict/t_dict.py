@@ -20,7 +20,7 @@ class TDict(MutableMapping):
             self.__d = deepcopy(d)
 
     def __getitem__(self, key):
-        return self.__d[key]
+        return self.__d.get(key)
 
     def __setitem__(self, key, value):
         self.__d[key] = value

@@ -41,9 +41,17 @@ class TestJsonPointerTraversal(unittest.TestCase):
             }
         })
 
-    def test_find(self):
+    def test_find_sanity(self):
         self.assertEqual(self.td.find('/nested/dict/key'), 'Hello!!')
         self.assertEqual(self.td.find('/nested/dict/notfound', 'mydefault'), 'mydefault')
+
+    def test_find_undefined_paths(self):
+        undefined_paths = ['/xxx/yyy/zzz/', '/nested/xxx/yyy/', '/nested/dict/xxx/']
+        try:
+            for path in undefined_paths:
+                self.td.find(path)
+        except:
+            self.fail('.find() fails when given an undefined path: %s' % path)
 
     def test_setin(self):
         self.td.setin('/nested/dict/key', 'Horadric cube!')
