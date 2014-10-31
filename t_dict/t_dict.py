@@ -21,7 +21,7 @@ class TDict(MutableMapping):
             self.__d = deepcopy(d)
 
     def __getitem__(self, key):
-        return self.__d.get(key)
+        return self.__d[key]
 
     def __setitem__(self, key, value):
         self.__d[key] = value
@@ -39,7 +39,7 @@ class TDict(MutableMapping):
         """
          Retrieves a single value using JSON-Pointer syntax
         """
-        return resolve_pointer(self, path, default)
+        return resolve_pointer(self.__d, path, default)
 
     def setin(self, path, value):
         """
