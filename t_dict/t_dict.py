@@ -9,6 +9,7 @@ try:
 except ImportError:
     from collections.abc import MutableMapping
 
+
 class TDict(MutableMapping):
 
     def __init__(self, d=None):
@@ -38,7 +39,7 @@ class TDict(MutableMapping):
         """
          Retrieves a single value using JSON-Pointer syntax
         """
-        return resolve_pointer(self, path, default)
+        return resolve_pointer(self.__d, path, default)
 
     def setin(self, path, value):
         """
