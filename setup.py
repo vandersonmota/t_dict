@@ -21,7 +21,7 @@ test_requirements = [
 
 setup(
     name='t_dict',
-    version='0.1.0',
+    version='0.1.1',
     description='Traversing and Querying Dicts the easy way',
     long_description=readme + '\n\n' + history,
     author='Vanderson Mota',
