@@ -38,7 +38,7 @@ Usage
 
     from t_dict.t_dict import TDict
 
-    td = TDict({'nested': { 'dict': 'here' }})
+    td = TDict({'nested': { 'dict': 'here', 'other': {'spam': 'eggs'} }})
     td.find('/nested/dict')
     >> 'here'
     td.find('/nested/notfound', 'defaultvalue')
@@ -46,4 +46,8 @@ Usage
 
     td.setin('/nested/dict', 'new')
     td['nested']['dict'] == 'new'
+    >> True
+
+    # converts dict to TDict
+    isinstance(td.find('/nested/other'), TDict)
     >> True

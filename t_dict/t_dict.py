@@ -39,7 +39,10 @@ class TDict(MutableMapping):
         """
          Retrieves a single value using JSON-Pointer syntax
         """
-        return resolve_pointer(self.__d, path, default)
+        result = resolve_pointer(self.__d, path, default)
+        if isinstance(result, dict):
+            result = TDict(result)
+        return result
 
     def setin(self, path, value):
         """

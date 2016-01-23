@@ -62,6 +62,9 @@ class TestJsonPointerTraversal(unittest.TestCase):
         self.td.setin('/nested/dict/key', 'Horadric cube!')
         self.assertEqual(self.td['nested']['dict']['key'], 'Horadric cube!')
 
+    def test_convert_dict_to_tdict(self):
+        self.assertIsInstance(self.td.find('/nested/dict'), TDict)
+
 
 if __name__ == '__main__':
     unittest.main()
